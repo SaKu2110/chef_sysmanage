@@ -1,0 +1,12 @@
+{
+  "name": "exercise3",
+  "default_attributes": { },
+  "override_attributes": { },
+  "json_class": "Chef::Role",
+  "description": "Third lesson: Web construction.",
+  "chef_type": "role",
+  "run_list": [
+    "recipe[firewalld::install]",
+    "recipe[httpd::install]"
+  ]
+}
