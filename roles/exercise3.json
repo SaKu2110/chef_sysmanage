@@ -7,6 +7,6 @@
   "chef_type": "role",
   "run_list": [
     "role[base]",
-    "role[exercise3]"
+    "recipe[exercise3]"
   ]
 }

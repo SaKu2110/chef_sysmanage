@@ -14,7 +14,7 @@ members.each do |id|
         action :nothing
         command "chmod 0711 /home/#{data['id']}"
     end
-    directory "/home/#{data['id']/html}" do
+    directory "/home/#{data['id']}/html" do
         owner "#{data['id']}"
         group "#{data['id']}"
         mode '0755'
@@ -25,7 +25,7 @@ members.each do |id|
         mode  0644
         source 'index.html.erb'
         variables({
-          :id => data['id']
+          :id => data['id'],
           :name => data['name']
         })
         notifies :run, resources(:execute => "settag"), :immediately
