@@ -1,6 +1,9 @@
-include_recipe "selinux::enable"
-include_recipe "firewalld::sebool"
+execute "enable selimux" do
+    command "setenforce 1"
+    not_if 'getenforce | grep Enforcing'
+end
 
+include_recipe "firewalld::sebool"
 include_recipe "httpd::userdir"
 
 members = data_bag('members')
